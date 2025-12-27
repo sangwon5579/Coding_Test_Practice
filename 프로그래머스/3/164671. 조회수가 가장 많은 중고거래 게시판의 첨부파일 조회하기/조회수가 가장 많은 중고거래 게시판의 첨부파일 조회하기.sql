@@ -1,0 +1,19 @@
+SELECT CONCAT("/home/grep/src/", F.BOARD_ID, "/", F.FILE_ID, F.FILE_NAME, F.FILE_EXT ) AS FILE_PATH
+FROM (  SELECT *
+        FROM USED_GOODS_BOARD
+        ORDER BY VIEWS DESC
+        LIMIT 1
+     ) B 
+        JOIN USED_GOODS_FILE F
+        ON B.BOARD_ID = F.BOARD_ID
+ORDER BY F.FILE_ID DESC
+
+
+
+# USED_GOODS_BOARD
+# BOARD_ID, WRITER_ID, TITLE, CONTENTS, PRICE, CREATED_DATE, STATUS, VIEWS
+# 게시글 ID, 작성자 ID, 게시글 제목, 게시글 내용, 가격, 작성일, 거래상태, 조회수
+
+# USED_GOODS_FILE
+# FILE_ID, FILE_EXT, FILE_NAME, BOARD_ID
+# 파일 ID, 파일 확장자, 파일 이름, 게시글 ID
