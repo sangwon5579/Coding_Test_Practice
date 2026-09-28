@@ -1,14 +1,14 @@
 def solution(s):
     answer = True
-    s_list = list(s)
-    num_p = 0
-    num_y = 0
-    for i in range(len(s_list)):
-        if(s_list[i] == "p" or s_list[i] == "P"):
-            num_p += 1
-        elif(s_list[i] == "y" or s_list[i] == "Y"):
-            num_y += 1
-    if(num_p == num_y):
-        return True
+    numP = 0
+    numY = 0
+    for i in s:
+        if(i == 'p' or i == 'P'):
+            numP+=1
+        elif(i == 'y' or i == 'Y'):
+            numY+=1
+    if(numP == numY):
+        answer = True
     else:
-        return False
+        answer = False
+    return answer
